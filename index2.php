@@ -26,10 +26,10 @@
 
                 <!-- NAVIGATION MENUS -->
                 <div class="menu">
-                    <li><a href="index2.html">Home</a></li>
+                    <li><a href="index2.php">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li><a href="setting.html">Setting</a></li>
+                    <li><a href="setting.php">Setting</a></li>
                 </div>
             </ul>
         </nav>
@@ -59,7 +59,7 @@
         <section style="padding: 20px; margin-top: 10vh; position: relative;" id="linimasa">
             <div class="flex" style="justify-content: space-between;">
                 <h1 style="font-size: 2em;">Linimasa</h1>
-                <a href="upload.html" class="button button-seccondary">Tambah linimasa &plus;</a>
+                <a href="upload.php" class="button button-seccondary">Tambah linimasa &plus;</a>
             </div>
             <div class="flex linimasa-data" style="justify-content: space-evenly;">
                 <div class="card">

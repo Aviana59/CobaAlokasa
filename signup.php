@@ -1,3 +1,22 @@
+<?php 
+
+  // panggil koneksi ke database
+  require_once 'koneksi.php';
+
+  // jika user klik tombol login
+  if(isset($_POST['kirim'])){
+
+    // jalankan fungsi login dari class auth
+    if($auth->signup($_POST)){
+
+      // redirect ke index
+      header("location: index.php");
+    } else {
+        $_SESSION['message'] = 'ERROR';
+    }
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,20 +47,24 @@
                 Welcome!
             </h1>
             <p>Masukan detail anda</p>
+            <form method="post">
             <div class="form-group">
-                <label for="">Username / email</label>
-                <input type="text" />
+                <label for="">Username</label>
+                <input type="text" name="username"/>
+                <label for="">Email</label>
+                <input type="text" name="email"/>
                 <label for="">Password</label>
-                <input type="password" />
-                <a href="index2.html" class="button-primary" style="margin-top: 2vh; width: 100%; text-align: center;">
-                    Sign in
-                </a>
+                <input type="password" name="password"/>
+                <button type="submit" name="kirim" class="button-primary" style="margin-top: 2vh; width: 100%; text-align: center;">
+                    Sign Up
+                </button>
                 <div class="text-center" style="margin-top: 2vh; width: 100%;">
 
-                    <p>Belum Punya Akun?</p>
-                    <a href="signup.html" style="font-weight: 600; color: black;">Sign Up</a>
+                    <p>Sudah Punya Akun?</p>
+                    <a href="signin.php" style="font-weight: 600; color: black;">Sign In</a>
                 </div>
             </div>
+    </form>
         </section>
     </main>
 </body>

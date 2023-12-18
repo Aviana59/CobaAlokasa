@@ -1,3 +1,7 @@
+<?php
+session_start()
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,12 +30,25 @@
 
                 <!-- NAVIGATION MENUS -->
                 <div class="menu">
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.php">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
+                    <?php
+                    if($_SESSION && $_SESSION['is_signin']):
+                    ?>
+                    <li><a href="setting.php">Setting</a></li>
+                    <?php
+                    endif;
+                    ?>
                 </div>
             </ul>
-            <a href="signin.html" class="button-primary btn-signin" id="sign-in">Sign In</a>
+            <?php
+                    if(!$_SESSION):
+                    ?>
+                    <a href="signin.php" class="button-primary btn-signin" id="sign-in">Sign In</a>
+                    <?php
+                    endif;
+                    ?>
         </nav>
         <div class="content text-primary" id="header-text" style="margin-top: 20vh; padding: 50px;">
             <h2 style="font-size: 3em;">Simpan kenangan indah anda</h2>
@@ -59,7 +76,7 @@
         <section style="padding: 20px; margin-top: 10vh; position: relative;" id="linimasa">
             <div class="flex" style="justify-content: space-between;">
                 <h1 style="font-size: 2em;">Linimasa</h1>
-                <a href="signin.html" class="button button-seccondary">Tambah linimasa &plus;</a>
+                <a href="upload.php" class="button button-seccondary">Tambah linimasa &plus;</a>
             </div>
             <div class="flex linimasa-data" style="justify-content: space-evenly;">
                 <div class="card">

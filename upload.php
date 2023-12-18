@@ -26,9 +26,9 @@
 
                 <!-- NAVIGATION MENUS -->
                 <div class="menu">
-                    <li><a href="index2.html">Home</a></li>
+                    <li><a href="index2.php">Home</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li><a href="setting.html">Setting</a></li>
+                    <li><a href="setting.php">Setting</a></li>
                 </div>
             </ul>
         </nav>

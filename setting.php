@@ -1,3 +1,16 @@
+<?php
+require_once 'koneksi.php';
+if(!$_SESSION){
+    header("Location: signin.php");
+}
+if(isset($_POST['signout'])){
+    $signout = $auth->signout();
+    if ($signout){
+        header('Location: signin.php');
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +28,7 @@
 
 <body>
     <div class="bg-primary header-setting">
-        <a href="index2.html">
+        <a href="index2.php">
             <p style="font-size: 30px; color:white;">&#x2190</p>
         </a>
         <p>Setting</p>
@@ -23,7 +36,7 @@
     <main>
         <div class="user">
             <img src="assets/images/profile.png" alt="profile" width="150px">
-            <h2>Username</h2>
+            <h2><?= $_SESSION['user']?></h2>
         </div>
         <div class="content-setting">
             <div class="sub-setting">
@@ -44,7 +57,9 @@
                     <option value="y">Bahasa Inggris</option>
                 </select>
             </div>
-            <button class="button button-primary" style="margin-top: 30px; margin-bottom: 50px;">Sign Out</button>
+            <form  method="post">
+                <button name="signout" type="submit">Sign Out</button>
+            </form>
         </div>
     </main>
 </body>
